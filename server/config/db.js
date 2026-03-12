@@ -11,6 +11,9 @@ const pool = new Pool({
   database: process.env.DB_NAME || 'qr_checkout',
   user: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASSWORD || '',
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 pool.on('connect', () => {
